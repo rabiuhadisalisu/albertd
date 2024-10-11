@@ -3,6 +3,8 @@ FROM php:8.2-apache
 
 # Set the working directory inside the container
 # WORKDIR /var/www/html
+# Enable mod_rewrite
+RUN a2enmod rewrite
 
 # Copy the files to the deployment.
 COPY ./deviceservices /var/www/html/deviceservices
