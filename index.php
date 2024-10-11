@@ -1,5 +1,5 @@
 <?php
 // Redirect to /tools/ directory
-header("Location: /tools/index.php");
+header("Location: /deviceservices/tools/index.php");
 exit();
 ?>
