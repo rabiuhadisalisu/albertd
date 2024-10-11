@@ -9,10 +9,6 @@ COPY ./deviceservices /var/www/html/deviceservices
 COPY ./index.php /var/www/html/index.php
 COPY ./.htaccess /var/www/html/deviceservices/.htaccess
 
-# Give appropriate permissions to the Apache web server for the 'deviceservices' directory
-RUN chown -R www-data:www-data /var/www/html/deviceservices \
-    && chmod -R 755 /var/www/html/deviceservices
-
 # Expose port 80 for HTTP
 EXPOSE 80
 
