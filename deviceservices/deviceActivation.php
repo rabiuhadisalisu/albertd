@@ -82,7 +82,7 @@ $privkey = array(file_get_contents('certs/original/iPhoneDeviceCA_private.key'),
 $devicecacert = file_get_contents('certs/original/iPhoneDeviceCA.crt');
 
 $config = array('digest_alg' => 'sha1');
-$config = array('config'=>'D:/server/php/extras/openssl/openssl.cnf', 'digest_alg' => 'sha1');
+$config = array('config'=>'/etc/ssl/openssl.cnf', 'digest_alg' => 'sha1');
 
 $usercert = openssl_csr_sign($deviceCertRequest,$devicecacert,$privkey,1096, $config, '06');
 openssl_x509_export($usercert,$certout);
@@ -125,7 +125,7 @@ $accountTokenBase64=base64_encode($accountToken);
 $pkeyid = openssl_pkey_get_private(file_get_contents("certs/signature_private.key"));
 
 openssl_sign($accountTokenBase64, $signature, $pkeyid);
-openssl_free_key($pkeyid);
+/// openssl_free_key($pkeyid);
 # -------------------------------------------------------------------------------------------------
 
 $accountTokenSignature= base64_encode($signature);
