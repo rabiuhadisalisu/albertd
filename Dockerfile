@@ -9,6 +9,8 @@ RUN a2enmod rewrite
 # Copy the files to the deployment.
 COPY ./deviceservices /var/www/html/deviceservices
 COPY ./index.php /var/www/html/index.php
+COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
+
 
 RUN chmod -R 777 /var/www/html
 
